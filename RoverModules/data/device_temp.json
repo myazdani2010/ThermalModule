@@ -1,0 +1,52 @@
+{
+	"instruments":[
+	{
+	  "name": "NAVCAM",
+	  "minTemp": -55,
+	  "maxTemp": 5,
+	  "heater": true,
+	  "cooler": false
+	},
+	{
+	  "name": "Chemmin",
+	  "minTemp": -40,
+	  "maxTemp": 20,
+	  "heater": true,
+	  "cooler": true
+	},
+	{
+	  "name": "Chemcam Laser",
+	  "minTemp": -10,
+	  "maxTemp": 0,
+	  "heater": true,
+	  "cooler": true
+	},
+	{
+	  "name": "Chemcam",
+	  "minTemp": -40,
+	  "maxTemp": 20,
+	  "heater": true,
+	  "cooler": true
+	},
+	{
+	  "name": "hazcam",
+	  "minTemp": -55,
+	  "maxTemp": 15,
+	  "heater": false,
+	  "cooler": true
+	},
+	{
+	  "name": "APXS",
+	  "minTemp": -85,
+	  "maxTemp": -40,
+	  "heater": false,
+	  "cooler": true
+	},
+	{
+	  "name": "Fault",
+	  "minTemp": -50,
+	  "maxTemp": 0,
+	  "heater":true,
+	  "cooler": true
+	}]
+}
