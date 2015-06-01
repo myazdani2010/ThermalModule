@@ -38,7 +38,7 @@ public class Sensor extends RoverClientRunnable {
 
 			while (state == State.ON) {
 
-				currentTemp = randomTemperature(moduleBase.minTemp, moduleBase.maxTemp);
+				currentTemp = randomTemperature(moduleBase.getMinTemp(), moduleBase.getMaxTemp());
 				
 				oos = new ObjectOutputStream(getRoverSocket().getNewSocket()
 						.getOutputStream());

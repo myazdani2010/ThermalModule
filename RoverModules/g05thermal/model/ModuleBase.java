@@ -4,27 +4,34 @@ import constant.State;
 
 public class ModuleBase {
 	
-	double currTemp;
+	private double currTemp;
 	
-	double minTemp;
+	private double minTemp;
 	
-	double maxTemp;
+	private double maxTemp;
 	
-	//will be true if the module is having heater
-	boolean isHeater;
+	/**
+	 * will be true if the module is having heater
+	 */
+	private boolean isHeater;
+	/**
+	 * 
+	 */
+	private State heaterState;
 	
-	State heaterState;
+	/**
+	 * will be true if the module is having cooler
+	 */
+	private boolean isCooler;
 	
-	//will be true if the module is having cooler
-	boolean isCooler;
+	private State coolerState;
 	
-	State coolerState;
-	
-	int port;
-	
+	/**
+	 * default constructor keeps the heater state and cooler state to OFF 
+	 */
 	public ModuleBase(){
-		heaterState = heaterState.OFF;
-		coolerState = coolerState.OFF;
+		this.heaterState = heaterState.OFF;
+		this.coolerState = coolerState.OFF;
 	}
 
 	public double getCurrTemp() {
@@ -82,7 +89,5 @@ public class ModuleBase {
 	public void setCoolerState(State coolerState) {
 		this.coolerState = coolerState;
 	}
-	
-	
 
 }

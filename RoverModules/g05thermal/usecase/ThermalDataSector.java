@@ -50,9 +50,13 @@ public class ThermalDataSector {
 	/**
 	 * tempChart map holds 1480 temperatures indicating a sol temp in Mars key
 	 * is minute from 10 to 1480 increments by 10 (ex: 10, 20, 30, ... , 1480)
+	 * and the value is the temperature
 	 */	
 	private Map<Integer, Float> tempChart;
 
+	/**
+	 * Creates the ModuleMap object, populates the moduleMap and calls the initialization method
+	 */
 	private ThermalDataSector() {
 
 		setModuleMap(new HashMap<Modules, ModuleBase>());
@@ -61,6 +65,9 @@ public class ThermalDataSector {
 
 	}
 
+	/**
+	 * calls the initTempChart() for further initialization 
+	 */
 	private void init() {
 		// initMap();
 		initTempChart();
@@ -127,10 +134,21 @@ public class ThermalDataSector {
 		return tempDataSector;
 	}
 
+	/**
+	 * returns the moduleMap object 
+	 * @return Map <br>
+	 *	key: Modules <br>
+	 *	value: ModuleBase
+	 */
 	public Map<Modules, ModuleBase> getModuleMap() {
 		return moduleMap;
 	}
 
+	/**
+	 * returns the ModuleBase by given key of the ModuleMap
+	 * @param Modules
+	 * @return ModuleBase
+	 */
 	public ModuleBase getModule(Modules mod) {
 		return moduleMap.get(mod);
 	}
@@ -225,7 +243,11 @@ public class ThermalDataSector {
 				+ " Objects.");
 	}
 
-	// set the temp range of each module by reading it from JSON file
+	/**
+	 * Sets the temp range of each module by reading it from JSON file
+	 * @param mod
+	 * @param moduleBase
+	 */
 	public void setTempRange(Modules mod, ModuleBase moduleBase) {
 
 	}
@@ -233,7 +255,8 @@ public class ThermalDataSector {
 	/**
 	 * sets the module map which contains name of Modules enum and ModuleBase model
 	 * 
-	 * @param Map that contains enum Modules as key and ModuleBase object as its value
+	 * @param Map <br>
+	 * that contains enum Modules as key and ModuleBase object as its value
 	 */
 	public void setModuleMap(Map<Modules, ModuleBase> hashMap) {
 		this.moduleMap = hashMap;

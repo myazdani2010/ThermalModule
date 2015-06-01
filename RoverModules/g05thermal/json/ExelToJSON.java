@@ -5,7 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.util.Iterator;
 
-import model.DailyTemp;
+import model.SolTemp;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -16,8 +16,17 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 /**
- * Converts data in excel sheet to JSON file and objects 
- * @author Mohammad Yazdani 
+ * Converts data in excel sheet to JSON file and objects. <br>
+ * This file is run once only for generating the JSON file from Excel. 
+ * Its not being used through other classes. 
+ * @author <b>Thermal Group</b> (CS537: California State University, Los Angeles) <br><br>
+ * 
+ * <ul>
+ * 	<li> Debasish Guha: debasish.gt@gmail.com </li>
+ *  <li> Mahdiye Jamali: mahdiye.jamali@gmail.com </li>
+ *  <li> Gayatri Devpal: gayatridevpal18@gmail.com </li>
+ *  <li> Mohammad Yazdani: m.yazdani2010@gmail.com </li>
+ * </ul>
  */
 
 public class ExelToJSON
@@ -33,7 +42,7 @@ public class ExelToJSON
 	// Instantiate the writer since we're writing to a JSON file.
 	FileWriter writer = null;
 	String jsonString = null;
-	DailyTemp dailyTemp = null;
+	SolTemp dailyTemp = null;
 
 	FileInputStream excelFile = null;
 
@@ -64,7 +73,7 @@ public class ExelToJSON
 		  Cell cell = cellIterator.next();
 		  if (cell.getCellType() != Cell.CELL_TYPE_STRING)
 		  {
-			dailyTemp = new DailyTemp();
+			dailyTemp = new SolTemp();
 
 			dailyTemp.setMinute((int) cell.getNumericCellValue());
 			cell = cellIterator.next();

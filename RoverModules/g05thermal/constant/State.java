@@ -13,7 +13,5 @@ package constant;
  * </ul>
  */
 public enum State {
-	
 	ON, OFF;
-
 }
