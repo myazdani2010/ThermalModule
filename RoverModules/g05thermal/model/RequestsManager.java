@@ -8,10 +8,9 @@ import java.util.ArrayList;
 import constant.Modules;
 import main.MasterMain;
 
-
 public class RequestsManager {
-	int port = MasterMain.getPort();
-	static String jsonFile;
+	private int port = MasterMain.getPort();
+	private static String jsonFile;
 	static ArrayList<Modules> moduleNames;
 	public static RequestsManager requestsManager;
 	

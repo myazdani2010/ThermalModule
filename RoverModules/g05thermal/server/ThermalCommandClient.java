@@ -13,12 +13,10 @@ public class ThermalCommandClient extends RoverClientRunnable{
 
 	public ThermalCommandClient(int port, InetAddress host) throws UnknownHostException {
 		super(port, host);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
 		try{
 			ObjectOutputStream oos = null;
 		    ObjectInputStream ois = null;

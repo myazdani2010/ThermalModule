@@ -38,7 +38,6 @@ public class MasterMain {
 			
 			SensorManager.getSensorManager();
 			//RequestsManager.getRequestsManager();
-			
 
 		} catch (IOException e) {
 			e.printStackTrace();

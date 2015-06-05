@@ -27,8 +27,9 @@ public class ThermalServer extends RoverServerRunnable{
 	@Override
 	public void run() {
 		try {
+		  System.out.print("\nServer: Waiting for client request");	 
 			while(true){				
-	            System.out.println("Server: Waiting for client request");	            
+	            System.out.print(" .");	            
 				//creating socket and waiting for client connection
 	            Socket socket = getRoverServerSocket().openSocket();
 	            ThermalServerChild useCaseServerChild = new ThermalServerChild();
@@ -42,7 +43,7 @@ public class ThermalServer extends RoverServerRunnable{
 	            if(isStatus() == false) break;
 	            
 	        }
-			System.out.println("Server: Shutting down Socket server!!");
+			System.out.println("Server: Shutting down Socket server!!!");
 	        //close the ServerSocket object
 	        closeAll();
 		}
@@ -50,7 +51,7 @@ public class ThermalServer extends RoverServerRunnable{
 			e.printStackTrace();
 		}
 	    catch(Exception error){
-        	System.out.println("Server: Error:" + error.getMessage());
+        	error.printStackTrace();
         }
 		
 	}

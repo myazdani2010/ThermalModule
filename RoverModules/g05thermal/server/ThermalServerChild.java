@@ -64,7 +64,10 @@ public class ThermalServerChild extends RoverClientRunnable {
 	  System.out.println(ThermalDataSector.getTempDataSector().getModuleMap().get(Modules.valueOf(moduleName)));
 	  return ThermalDataSector.getTempDataSector().getModuleMap().get(Modules.valueOf("NAVCAM")).getHeaterState().toString();
 	}
-
+	/**
+	 * Checks the command that has been issued form other modules for further process.
+	 * commands are expected to be in JSON format with 3 keys: NAME, COMMAND, TEMPERATURE.
+	 */
 	public void checkCommand() {
 		// String jsonString =
 		// "{\"data\":{\"name\":\"Chemcam\",\"Command\":\"CURRENT_TEMP\"}}";
@@ -81,7 +84,8 @@ public class ThermalServerChild extends RoverClientRunnable {
 			if (json instanceof JSONObject) {
 				// org.json.JSONObject data = jObject.getJSONObject("data");
 				Iterator<String> keys = jObject.keys();
-				// System.out.println("All keys from JSON String:");
+				System.out.println("ThermalServerC");
+				
 				while (keys.hasNext()) {
 					String key = keys.next().toUpperCase();
 					switch (ThermalKeys.valueOf(key)) {
